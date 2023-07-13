@@ -1,8 +1,7 @@
 #include <stdio.h>
 /**
  * main - Entry point
- *
- * main to print all the sizes of all types
+ * Description: print all the sizes of all types
  * Return: Always 0 (Success)
  */
 int main(void)

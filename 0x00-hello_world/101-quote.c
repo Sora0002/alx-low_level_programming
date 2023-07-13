@@ -1,13 +1,11 @@
-#include <stdio.h>
+#include <unistd.h>
 /**
  * main - Entry point
- *task 8
+ * Description: and that piece of art is useful" - Dora Korpar, 2015-10-19
  * Return: Always 1 (Success)
  */
 int main(void)
 {
-	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19,";
-
-	printf("%s\n", str);
+	write(1,"and that piece of art is useful\" - Dora Korpar, 2015-10-19,\n",61);
 	return (1);
 }
