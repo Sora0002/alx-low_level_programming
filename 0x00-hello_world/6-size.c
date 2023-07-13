@@ -13,11 +13,6 @@ int main(void)
 	int llSize = sizeof(long long int);
 	int floatSize = sizeof(float);
 
-	printf("Size of a char: %d byte(s)\n
-			Size of an int: %d byte(s)\n
-			Size of a long int: %d byte(s)\n
-			Size of a long long int: %d byte(s)\n
-			Size of a float: %d byte(s)\n
-			", charSize, intSize, longSize, llSize, floatSize);
+	printf("Size of a char: %d byte(s)\nSize of an int: %d byte(s)\nSize of a long int: %d byte(s)\nSize of a long long int: %d byte(s)\nSize of a float: %d byte(s)\n", charSize, intSize, longSize, llSize, floatSize);
 	return (0);
 }
