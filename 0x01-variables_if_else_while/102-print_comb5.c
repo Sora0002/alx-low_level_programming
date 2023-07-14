@@ -11,10 +11,14 @@ int main(void)
 	while (a < 10)
 	{
 		for (b = 0; b < 10; b++)
-		{
 			for (c = a; c < 10; c++)
 			{
-				for (d = b + 1; d < 10; d++)
+				if (c > a)
+					d = 0;
+				else
+					d = b + 1;
+
+				while (d < 10)
 				{
 					putchar(a + '0');
 					putchar(b + '0');
@@ -26,9 +30,9 @@ int main(void)
 						putchar(44);
 						putchar(' ');
 					}
+					d++;
 				}
 			}
-		}
 		a++;
 	}
 	putchar('\n');
