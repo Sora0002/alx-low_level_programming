@@ -27,4 +27,8 @@ int _isalpha(int c);
 
 int print_sign(int n);
 
+/* _abs Function */
+
+int _abs(int);
+
 #endif
