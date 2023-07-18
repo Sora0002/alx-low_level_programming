@@ -12,23 +12,26 @@ void jack_bauer(void)
 	while (a <= 2)
 	{
 		b = 0;
-		while (b <= 3)
+		while (b <= 9)
 		{
 			c = 0;
-			while (c <= 5)
+			if ((a <= 1 && b <= 9) || (a <= 2 && b <= 3))
 			{
-				d = 0;
-				while (d <= 9)
+				while (c <= 5)
 				{
-					_putchar(a + '0');
-					_putchar(b + '0');
-					_putchar(58);
-					_putchar(c + '0');
-					_putchar(d + '0');
-					d++;
-					_putchar('\n');
+					d = 0;
+					while (d <= 9)
+					{
+						_putchar(a + '0');
+						_putchar(b + '0');
+						_putchar(58);
+						_putchar(c + '0');
+						_putchar(d + '0');
+						d++;
+						_putchar('\n');
+					}
+					c++;
 				}
-				c++;
 			}
 			b++;
 		}
