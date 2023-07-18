@@ -35,4 +35,8 @@ int _abs(int);
 
 int print_last_digit(int);
 
+/*jack_bauer function*/
+
+void jack_bauer(void);
+
 #endif
