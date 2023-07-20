@@ -17,6 +17,6 @@ int main(void)
 			num = num % 2;
 		a++;
 	}
-	printf("%ld \n", num);
+	printf("%ld\n", num);
 	return (0);
 }
