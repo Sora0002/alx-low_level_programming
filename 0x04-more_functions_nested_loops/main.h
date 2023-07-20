@@ -19,4 +19,12 @@ int _isdigit(int c);
 
 int mul(int a, int b);
 
+/*print_numbers function*/
+
+void print_numbers(void);
+
+/*print_most_numbers function*/
+
+void print_most_numbers(void);
+
 #endif
