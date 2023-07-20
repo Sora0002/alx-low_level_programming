@@ -15,7 +15,7 @@ int main(void)
 			num = num / a;
 		else if (num % 2 == 0)
 			num = num % 2;
-		a++;
+		a += 2;
 	}
 	printf("%ld\n", num);
 	return (0);
