@@ -43,4 +43,8 @@ void print_diagonal(int n);
 
 void print_square(int size);
 
+/*print_triangle function*/
+
+void print_triangle(int size);
+
 #endif
