@@ -15,4 +15,8 @@ int _isupper(int c);
 
 int _isdigit(int c);
 
+/*mul function*/
+
+int mul(int a, int b);
+
 #endif
