@@ -1,29 +1,30 @@
 #include "main.h"
 /**
- * 7-leet.c - 1337
+ * leet - 1337
  * @s: string
  *
  * Return: char
  */
 char *leet(char *s)
 {
+	char *p = s;
 	char a[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 	char b[] = {'4', '3', '0', '7', '1'};
 	int i;
 
-	while (*s)
+	while (*p)
 	{
 		i = 0;
 		while (i < 10)
 		{
-			if (*s == a[i] || *s == a[i + 1])
+			if (*p == a[i] || *p == a[i + 1])
 			{
-				*s = b[(i / 2) + 1];
+				*p = b[i / 2];
 				break;
 			}
-			i++;
+			i += 2;
 		}
-		s++;
+		p++;
 	}
 	return (s);
 }
