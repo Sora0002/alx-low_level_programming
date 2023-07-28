@@ -34,4 +34,9 @@ char *string_toupper(char *);
 /* cap_string function*/
 
 char *cap_string(char *);
+
+/* leet function */
+
+char *leet(char *);
+
 #endif
