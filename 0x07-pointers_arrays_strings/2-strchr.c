@@ -2,7 +2,7 @@
 /**
  * _strchr - a function that locates a character in a string.
  * @s: the string
- * @c: th character
+ * @c: the character
  *
  * Return: char
  */
@@ -17,14 +17,9 @@ char *_strchr(char *s, char c)
 			a = 1;
 			break;
 		}
-		else
-		{
-			a = -1;
-			s++;
-
-		}
+		s++;
 	}
-	if (a == -1)
+	if (a != 1)
 		s = NULL;
 	return (s);
 }
