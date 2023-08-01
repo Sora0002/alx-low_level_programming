@@ -27,4 +27,8 @@ unsigned int _strspn(char *s, char *accept);
 
 char *_strpbrk(char *s, char *accept);
 
+/* _strstr function */
+
+char *_strstr(char *haystack, char *needle);
+
 #endif
