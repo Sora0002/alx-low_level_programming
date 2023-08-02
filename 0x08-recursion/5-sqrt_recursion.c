@@ -7,18 +7,21 @@
  *
  * Return: int
  */
-int frec(int n, int s, int e)
+int frec(int n, int s)
 {
-	if (s <= e)
-	{
-		int m = (s + e) / 2;
-		int sq = m * m;
+	int d = n / 2, b;
 
-		if (sq == n)
-			return (m);
-		if (sq < n)
-			return (frec(n, m + 1, e));
-		return (frec(n, s, m - 1));
+	if (s <= d)
+	{
+		b = n / s;
+		if (b == s)
+		{
+			return (s);
+		}
+		else
+		{
+			return (frec(n, s + 1));
+		}
 	}
 	return (-1);
 }
@@ -32,5 +35,5 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	return (frec(n, 0, n));
+	return (frec(n, 1));
 }
