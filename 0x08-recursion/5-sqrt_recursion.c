@@ -3,7 +3,6 @@
  * frec - find sqrt
  * @n: the number
  * @s: start
- * @e: end
  *
  * Return: int
  */
