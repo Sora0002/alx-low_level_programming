@@ -1,7 +1,14 @@
 #include "main.h"
+/**
+ * checker - the checker
+ * @n: the number
+ * @b: checker number
+ *
+ * Return: 1 ou 0
+ */
 int checker(int n, int b)
 {
-	if (n == 1 || n == -1)
+	if (n == 1)
 		return (0);
 	if (b <= n / 2)
 	{
@@ -19,7 +26,7 @@ int checker(int n, int b)
  */
 int is_prime_number(int n)
 {
-	if (checker(n, 2) == 0)
+	if (checker(n, 2) == 0 || n < 0)
 		return (0);
-	return(1);
+	return (1);
 }
