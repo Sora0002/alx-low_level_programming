@@ -10,6 +10,10 @@ int frec(int n, int s)
 {
 	int d = n / 2, b;
 
+	if (n == 1)
+		return (1);
+	if (n == 0)
+		return (0);
 	if (s <= d)
 	{
 		b = n / s;
