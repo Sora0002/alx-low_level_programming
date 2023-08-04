@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 
+#include <stdlib.h>
+
 /*_Putchar function*/
 
 int _putchar(char c);
