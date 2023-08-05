@@ -7,20 +7,15 @@
  */
 int _atoi(char *s)
 {
-	int s1 = 1;
-	unsigned int n = 0;
+	char *c = s;
 
-	do {
-		if (*s == '_')
-			s1 *= -1;
-		else if (*s >= '0' && *s <= '9')
-			n = (*s - '0') + (n * 10);
-		else if (n > 0)
-			break;
-		else if (*s > '9')
+	while (*c)
+	{
+		if (*c < '0' || *c > '9')
 			return (-1);
-	} while (*s++);
-	return (n * s1);
+		c++;
+	}
+	return (0);
 }
 
 /**
@@ -42,7 +37,7 @@ int main(int argc, char **argv)
 	{
 		while (i < argc)
 		{
-			if (_atoi(argv[i]) == -1 || _atoi(argv[i]) < 0)
+			if (_atoi(argv[i]) == -1)
 			{
 				printf("Error\n");
 				return (1);
