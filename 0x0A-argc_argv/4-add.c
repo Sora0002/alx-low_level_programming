@@ -17,8 +17,8 @@ int _atoi(char *s)
 			n = (*s - '0') + (n * 10);
 		else if (n > 0)
 			break;
-		else
-			return (-1);;
+		else if (*s < '0' && *s > '9')
+			return (-1);
 	} while (*s++);
 	return (n * s1);
 }
@@ -32,7 +32,7 @@ int _atoi(char *s)
  */
 int main(int argc, char **argv)
 {
-	int i = 1;
+	int i = 1, sum = 0;
 
 	if (argc == 1)
 	{
@@ -52,10 +52,10 @@ int main(int argc, char **argv)
 		i = 1;
 		while (i < argc)
 		{
-			printf("%d", _atoi(argv[i]));
+			sum += atoi(argv[i]);
 			i++;
 		}
-		printf("\n");
+		printf("%d\n", sum);
 	}
 	return (0);
 }
