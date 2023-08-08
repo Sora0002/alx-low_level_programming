@@ -18,6 +18,8 @@ char *str_concat(char *s1, char *s2)
 		b++;
 	b += i;
 	p = (char *)malloc((b + 1) * sizeof(char));
+	if (p == NULL)
+		return (NULL);
 	i = 0;
 	while (s1[i] != '\0')
 	{
