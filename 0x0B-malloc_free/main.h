@@ -13,4 +13,8 @@ int _putchar(char c);
 
 char *create_array(unsigned int size, char c);
 
+/*_strdup() function */
+
+char *_strdup(char *str);
+
 #endif
