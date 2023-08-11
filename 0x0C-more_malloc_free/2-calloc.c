@@ -9,21 +9,11 @@
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	int i = 0, l;
+	char *p = s;
 
-	l = (int)n;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	l--;
-	i = 0;
-	while (i <= l)
-	{
-		s[i] = b;
-		i++;
-	}
-	return (s);
+	while (n--)
+		*s++ = b;
+	return (p);
 }
 /**
  * _calloc - function like calloc
@@ -40,6 +30,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	p = malloc(nmemb * sizeof(int));
 	if (p == NULL)
 		return (NULL);
-	_memset(p, 0, nmemb * sizeof(int)); 
+	_memset(p, 0, nmemb * sizeof(int));
 	return (p);
 }
