@@ -8,7 +8,7 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, b = 0, s = 0;
+	unsigned int i = 0, b = 0, s = 0, d, f;
 	char *p;
 
 	if (s2 == NULL)
@@ -23,15 +23,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		n = b;
 	s = i + n;
 	p = (char *)malloc(s + 1);
-	printf("%d \n", s);
 	if (p == NULL)
 		return (NULL);
-	for (s = 0; s < i; s++)
-		p[s] = s1[s];
-	for (i = 0; i < n; i++)
+	for (d = 0; d < i; d++)
+		p[d] = s1[d];
+	for (f = 0; f < n; f++)
 	{
-		p[s] = s2[i];
-		s++;
+		p[d] = s2[f];
+		d++;
 	}
 	p[s] = '\0';
 	return (p);
