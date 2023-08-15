@@ -1,5 +1,6 @@
 #ifndef DOG_h
 #define DOG_h
+#include <stdio.h>
 /**
  * struct dog - a dog infos
  * @name: the name
@@ -16,5 +17,7 @@ struct dog
 };
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
+
+void print_dog(struct dog *d);
 
 #endif
