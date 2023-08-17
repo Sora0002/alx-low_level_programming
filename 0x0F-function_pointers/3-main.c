@@ -13,7 +13,7 @@ int main(int __attribute__((__unused__)) argc, char **argv)
 	int n1, n2;
 	char *op;
 
-	if (argc != 3)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
