@@ -5,7 +5,7 @@
  * main - entry point
  * @argc: args count
  * @argv: args values
- * 
+ *
  * Return: 0 on success
 */
 int main(int __attribute__((__unused__)) argc, char **argv)
