@@ -14,7 +14,7 @@ int _strlen(const char *str)
 }
 /**
  * add_node_end - add new node at the end of list
- * @h: the head
+ * @head: the head
  * @str: the strng to be added
  * Return: the & of the new node
 */
@@ -46,3 +46,4 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 		return (t);
 }
+
