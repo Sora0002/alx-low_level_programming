@@ -20,7 +20,7 @@ int _strlen(const char *str)
 */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *t = malloc(sizeof(list_t));
+	list_t *t = malloc(sizeof(list_t)), *l = *head;
 
 	if (t == NULL)
 		return (NULL);
@@ -33,16 +33,16 @@ list_t *add_node_end(list_t **head, const char *str)
 			free(t);
 			return (NULL);
 		}
-	}
-	if (head)
-	{
-			while ((*head)->next)
+		if (l != NULL)
+		{
+			while (l->next)
 			{
-				(*head) = (*head)->next;
+				l = l->next;
 			}
-			(*head)->next = t;
+			l->next = t;
+		}
+		else
+			*head = t;
 	}
-	else
-		*head = t;
-	return (t);
+		return (t);
 }
