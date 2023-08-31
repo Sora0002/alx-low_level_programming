@@ -23,8 +23,7 @@ int _pow(int ba, int e)
 {
 	if (e == 0)
 		return (1);
-	else if (e > 0)
-		return (ba * _pow(ba, e - 1));
+	return (ba * _pow(ba, e - 1));
 }
 /**
  * binary_to_uint - convert binary to unsigned int
