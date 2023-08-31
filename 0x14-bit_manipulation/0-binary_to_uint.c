@@ -42,9 +42,10 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[len] == '1' || b[len] == '0')
 		{
-			if (b == 0)
+			if (b[len] == '0')
 			{
 				len--;
+				i++;
 				continue;
 			}
 			sum += _pow(2, i);
