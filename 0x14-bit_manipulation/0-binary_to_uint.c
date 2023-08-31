@@ -34,10 +34,11 @@ int _pow(int ba, int e)
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int len, sum = 0, i = 0;
+	char *c = b;
 
 	if (!b)
 		return (0);
-	len = _strlen(b) - 1;
+	len = _strlen(c) - 1;
 	while (len >= 0)
 	{
 		if (b[len] == '1' || b[len] == '0')
@@ -52,7 +53,7 @@ unsigned int binary_to_uint(const char *b)
 			len--;
 			continue;
 		}
-		return (NULL);
+		return (0);
 	}
 	return (sum);
 }
