@@ -33,7 +33,8 @@ int _pow(int ba, int e)
 */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int len, sum = 0, i = 0;
+	unsigned int sum = 0, i = 0;
+	int len;
 	char *c = b;
 
 	if (!b)
