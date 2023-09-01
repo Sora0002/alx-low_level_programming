@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <string.h>
 
+/* putchar function */
+int _putchar(char c);
 
 /* all the functions */
 unsigned int binary_to_uint(const char *b);
