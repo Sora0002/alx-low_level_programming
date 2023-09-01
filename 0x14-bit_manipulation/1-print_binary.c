@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 	if (n > 1)
 	{
 		a = n >> 1;
-		printf_binary(a);
+		print_binary(a);
 	}
 	if ((n & 1) == 1)
 		_putchar('1');
