@@ -47,5 +47,5 @@ int main(int argc, char **argv)
 	}
 	close(src_fd);
 	close(dest_fd);
-	return 0;
+	return (0);
 }
