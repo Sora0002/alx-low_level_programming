@@ -1,5 +1,5 @@
-#include <sys/types.h>
-#include <sys/stat.h>
+#include <main.h>
+
 
 /**
  * main - copies the content of a file to another file
