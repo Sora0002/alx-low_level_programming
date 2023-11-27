@@ -1,51 +1,72 @@
 #include "main.h"
-
+#include <stdio.h>
 
 /**
- * main - copies the content of a file to another file
- *
- * @argc: args count
- * @argv: args values
- * Return: 0 on (Success)
+ * error_file - checks if files can be opened.
+ * @file_from: file_from.
+ * @file_to: file_to.
+ * @argv: arguments vector.
+ * Return: no return.
  */
-int main(int argc, char **argv)
+void error_file(int file_from, int file_to, char *argv[])
 {
-	int src_fd, dest_fd;
-	char buffer[1024];
-	ssize_t bytes_read, bytes_written;
+	if (file_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	if (file_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
+}
+
+/**
+ * main - check the code for Holberton School students.
+ * @argc: number of arguments.
+ * @argv: arguments vector.
+ * Return: Always 0.
+ */
+int main(int argc, char *argv[])
+{
+	int file_from, file_to, err_close;
+	ssize_t nchars, nwr;
+	char buf[1024];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp source_file destination_file\n");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
 	}
-	src_fd = open(argv[1], O_RDONLY);
-	if (src_fd == -1)
+
+	file_from = open(argv[1], O_RDONLY);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	error_file(file_from, file_to, argv);
+
+	nchars = 1024;
+	while (nchars == 1024)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-		}
-	dest_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (dest_fd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
-		exit(99);
-		}
-	while ((bytes_read = read(src_fd, buffer, sizeof(buffer))) > 0)
-	{
-		bytes_written = write(dest_fd, buffer, bytes_read);
-		if (bytes_read != bytes_written)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
-			exit(99);
-		}
+		nchars = read(file_from, buf, 1024);
+		if (nchars == -1)
+			error_file(-1, 0, argv);
+		nwr = write(file_to, buf, nchars);
+		if (nwr == -1)
+			error_file(0, -1, argv);
 	}
-	if (bytes_read == -1)
+
+	err_close = close(file_from);
+	if (err_close == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		exit(100);
 	}
-	close(src_fd);
-	close(dest_fd);
+
+	err_close = close(file_to);
+	if (err_close == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		exit(100);
+	}
 	return (0);
 }
